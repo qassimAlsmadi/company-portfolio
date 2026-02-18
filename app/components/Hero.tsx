@@ -56,7 +56,7 @@ export default function Hero() {
       <motion.div
         aria-hidden='true'
         style={prefersReducedMotion ? undefined : { y }}
-        className='absolute inset-0 -z-20 bg-linear-to-br from-purple-900 via-indigo-900 to-pink-900'
+        className='absolute inset-0 -z-20 bg-gradient-to-br from-purple-900 via-indigo-900 to-pink-900'
       />
       <div
         aria-hidden='true'
@@ -87,7 +87,7 @@ export default function Hero() {
               transition={{ duration: 0.6, ease: 'easeOut', delay: 0.05 }}
               className='mt-6 text-4xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-white'
             >
-              <span className='bg-linear-to-r from-purple-300 via-pink-300 to-indigo-300 bg-clip-text text-transparent'>
+              <span className='bg-gradient-to-r from-purple-300 via-pink-300 to-indigo-300 bg-clip-text text-transparent'>
                 {copy.title}
               </span>
               <span className='block mt-3 text-xl sm:text-2xl lg:text-3xl font-medium text-slate-200/90'>
@@ -112,7 +112,7 @@ export default function Hero() {
             >
               <a
                 href='#projects'
-                className='inline-flex items-center justify-center rounded-md px-5 py-3 text-sm font-medium text-slate-950 bg-linear-to-r from-purple-300 via-pink-300 to-indigo-300 hover:from-purple-200 hover:via-pink-200 hover:to-indigo-200 transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-purple-400/70'
+                className='inline-flex items-center justify-center rounded-md px-5 py-3 text-sm font-medium text-slate-950 bg-gradient-to-r from-purple-300 via-pink-300 to-indigo-300 hover:from-purple-200 hover:via-pink-200 hover:to-indigo-200 transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-purple-400/70'
               >
                 {copy.cta1}
               </a>
@@ -152,13 +152,13 @@ export default function Hero() {
             className='relative'
           >
             {/* Glowing Frame */}
-            <div className='absolute inset-0 bg-linear-to-r from-purple-600 via-pink-600 to-indigo-600 rounded-full blur-2xl opacity-60 animate-pulse' />
+            <div className='absolute inset-0 bg-gradient-to-r from-purple-600 via-pink-600 to-indigo-600 rounded-full blur-2xl opacity-60 animate-pulse' />
 
             {/* Rotating Border */}
             <motion.div
               animate={{ rotate: 360 }}
               transition={{ duration: 20, repeat: Infinity, ease: 'linear' }}
-              className='absolute inset-0 rounded-full bg-linear-to-r from-purple-600 via-pink-600 to-indigo-600 p-1'
+              className='absolute inset-0 rounded-full bg-gradient-to-r from-purple-600 via-pink-600 to-indigo-600 p-1'
             >
               <div className='w-full h-full rounded-full bg-slate-950' />
             </motion.div>
@@ -166,13 +166,15 @@ export default function Hero() {
             {/* Profile Image Container */}
             <div className='relative w-80 h-80 lg:w-96 lg:h-96 rounded-full overflow-hidden group'>
               {/* Hover Overlay */}
-              <div className='absolute inset-0 bg-linear-to-br from-purple-600/20 via-pink-600/20 to-indigo-600/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10' />
+              <div className='absolute inset-0 bg-gradient-to-br from-purple-600/20 via-pink-600/20 to-indigo-600/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10' />
 
               {/* Profile Image */}
               <img
                 src='/images/profile.jpg'
-                alt='Qasim Al-Smadi - AI-Assisted Graphic Designer'
+                alt='Qasim Al-Smadi - Backend Developer & AI Automation Specialist'
                 className='w-full h-full object-cover transition-transform duration-500 group-hover:scale-105'
+                loading='lazy'
+                decoding='async'
                 onError={(e) => {
                   // Fallback to a placeholder if image not found
                   const target = e.target as HTMLImageElement;

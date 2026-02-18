@@ -176,7 +176,7 @@ export default function Projects() {
             >
               <div className='bg-slate-950 rounded-2xl border border-slate-800 overflow-hidden hover:border-purple-500 transition-all duration-300 hover:scale-105'>
                 {/* Project Image Placeholder */}
-                <div className='relative h-48 bg-linear-to-br from-purple-600/20 to-pink-600/20 flex items-center justify-center'>
+                <div className='relative h-48 bg-gradient-to-br from-purple-600/20 to-pink-600/20 flex items-center justify-center'>
                   <div className='text-6xl opacity-50'>🎨</div>
                   <div className='absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors duration-300' />
                   <div className='absolute top-3 right-3 bg-purple-500/20 backdrop-blur-sm px-3 py-1 rounded-full text-xs text-purple-300'>

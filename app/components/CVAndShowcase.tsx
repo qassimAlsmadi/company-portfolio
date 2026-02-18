@@ -31,7 +31,7 @@ export default function CVAndShowcase() {
           <a
             href='/Qasim_Al_Smadi_CV.pdf'
             download
-            className='inline-flex items-center justify-center rounded-md px-6 py-3 text-sm font-medium text-slate-950 bg-linear-to-r from-indigo-300 via-purple-300 to-pink-300 hover:from-indigo-200 hover:via-purple-200 hover:to-pink-200 transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-400/70'
+            className='inline-flex items-center justify-center rounded-md px-6 py-3 text-sm font-medium text-slate-950 bg-gradient-to-r from-indigo-300 via-purple-300 to-pink-300 hover:from-indigo-200 hover:via-purple-200 hover:to-pink-200 transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-400/70'
           >
             {copy.cvBtn}
           </a>

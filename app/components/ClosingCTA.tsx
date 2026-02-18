@@ -30,7 +30,7 @@ export default function ClosingCTA() {
       className='py-24 px-6 text-white bg-slate-900'
     >
       <div className='max-w-6xl mx-auto'>
-        <div className='rounded-3xl border border-white/10 bg-linear-to-br from-indigo-950 via-slate-950 to-purple-950 p-10 sm:p-12 overflow-hidden relative'>
+        <div className='rounded-3xl border border-white/10 bg-gradient-to-br from-indigo-950 via-slate-950 to-purple-950 p-10 sm:p-12 overflow-hidden relative'>
           <div
             aria-hidden='true'
             className='absolute -top-24 -right-24 h-72 w-72 rounded-full bg-indigo-500/20 blur-3xl'
@@ -51,7 +51,7 @@ export default function ClosingCTA() {
             <div className='mt-8 flex flex-col sm:flex-row gap-3'>
               <a
                 href='#contact'
-                className='inline-flex items-center justify-center rounded-md px-5 py-3 text-sm font-medium text-slate-950 bg-linear-to-r from-indigo-300 via-purple-300 to-pink-300 hover:from-indigo-200 hover:via-purple-200 hover:to-pink-200 transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-400/70'
+                className='inline-flex items-center justify-center rounded-md px-5 py-3 text-sm font-medium text-slate-950 bg-gradient-to-r from-indigo-300 via-purple-300 to-pink-300 hover:from-indigo-200 hover:via-purple-200 hover:to-pink-200 transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-400/70'
               >
                 {copy.cta1}
               </a>

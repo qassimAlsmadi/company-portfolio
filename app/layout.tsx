@@ -5,35 +5,60 @@ import ClientPageTransition from './ClientPageTransition';
 import { LangProvider } from './components/LangProvider';
 
 export const metadata: Metadata = {
-  title: 'Qasim Al-Smadi | AI-Assisted Graphic Designer | Visual Storyteller',
+  title: 'Qasim Al-Smadi | Backend Developer & AI Automation Specialist',
   description:
-    'Creative Graphic Designer specializing in AI-powered design solutions. Leveraging MidJourney, DALL·E, and AI tools to create stunning brand identities, digital designs, and visual experiences.',
+    'Professional Backend Developer specializing in PHP, Laravel, Node.js, and AI automation with N8N. Expert in API development, database management, and creating scalable backend solutions with artificial intelligence integration.',
   keywords: [
-    'AI-Assisted Graphic Designer',
-    'Visual Storyteller',
-    'Brand Identity Design',
-    'Digital Design',
-    'AI Design Tools',
-    'MidJourney Designer',
-    'DALL·E Artist',
-    'Motion Graphics',
-    'Visual Branding',
-    'Creative Direction',
-    'AI-Powered Design',
-    'Modern Graphic Design',
+    'Backend Developer',
+    'AI Automation Specialist',
+    'N8N Expert',
+    'PHP Developer',
+    'Laravel Developer',
+    'Node.js Developer',
+    'API Development',
+    'Database Management',
+    'AI Integration',
+    'Machine Learning',
+    'DevOps Engineer',
+    'Python Developer',
+    'REST APIs',
+    'GraphQL',
+    'Backend Architecture',
   ],
   authors: [{ name: 'Qasim Al-Smadi' }],
   openGraph: {
-    title: 'AI-Assisted Graphic Designer Portfolio | Qasim Al-Smadi',
+    title: 'Backend Developer & AI Automation Specialist | Qasim Al-Smadi',
     description:
-      'Transforming ideas into visual excellence with AI-powered design. Specializing in brand identity, digital design, and creative direction using cutting-edge AI tools.',
+      'Expert Backend Developer and AI Automation Specialist. Specializing in PHP, Laravel, Node.js, N8N automation, and creating intelligent backend solutions with artificial intelligence integration.',
     type: 'website',
   },
 };
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
-    <html>
+    <html
+      lang='en'
+      dir='ltr'
+    >
+      <head>
+        <meta
+          name='viewport'
+          content='width=device-width, initial-scale=1'
+        />
+        <meta
+          name='theme-color'
+          content='#0f172a'
+        />
+        <link
+          rel='preconnect'
+          href='https://fonts.googleapis.com'
+        />
+        <link
+          rel='preconnect'
+          href='https://fonts.gstatic.com'
+          crossOrigin='anonymous'
+        />
+      </head>
       <body className='bg-slate-950 text-white'>
         <LangProvider>
           <ClientPageTransition>{children}</ClientPageTransition>

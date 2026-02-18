@@ -27,7 +27,7 @@ const t = {
       sent: 'Message Sent!',
     },
     contact: {
-      email: 'qasim.alsmadi@example.com',
+      email: 'qassemengineer651@gmail.com',
       phone: '+963 937 470 930',
     },
   },
@@ -44,7 +44,7 @@ const t = {
       sent: 'تم إرسال الرسالة!',
     },
     contact: {
-      email: 'qasim.alsmadi@example.com',
+      email: 'kasemabdalmoutesmadi@gmail.com',
       phone: '+963 937 470 930',
     },
   },
@@ -121,7 +121,7 @@ export default function Contact() {
       className='relative py-24 px-4 sm:px-6 text-white overflow-hidden'
     >
       {/* Animated Gradient Background */}
-      <div className='absolute inset-0 -z-10 bg-linear-to-br from-purple-900 via-slate-950 to-pink-900' />
+      <div className='absolute inset-0 -z-10 bg-gradient-to-br from-purple-900 via-slate-950 to-pink-900' />
 
       <div className='max-w-6xl mx-auto'>
         <div className='grid lg:grid-cols-2 gap-16 items-center'>
@@ -132,7 +132,7 @@ export default function Contact() {
             transition={{ duration: 0.7 }}
             viewport={{ once: true }}
           >
-            <h2 className='text-3xl sm:text-5xl font-bold mb-6 bg-linear-to-r from-purple-300 to-pink-300 bg-clip-text text-transparent'>
+            <h2 className='text-3xl sm:text-5xl font-bold mb-6 bg-gradient-to-r from-purple-300 to-pink-300 bg-clip-text text-transparent'>
               {copy.title}
             </h2>
 
@@ -259,7 +259,7 @@ export default function Contact() {
                   disabled={isSubmitting || isSubmitted}
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
-                  className='w-full py-3 bg-linear-to-r from-purple-500 to-pink-500 text-white font-medium rounded-lg border border-purple-500/50 hover:from-purple-600 hover:to-pink-600 focus:outline-none focus:ring-2 focus:ring-purple-500/50 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed'
+                  className='w-full py-3 bg-gradient-to-r from-purple-500 to-pink-500 text-white font-medium rounded-lg border border-purple-500/50 hover:from-purple-600 hover:to-pink-600 focus:outline-none focus:ring-2 focus:ring-purple-500/50 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed'
                 >
                   {isSubmitting
                     ? copy.form.sending

@@ -21,6 +21,9 @@ export default function Navbar() {
       { href: '#about', label: { en: 'About', ar: 'عني' } },
       { href: '#services', label: { en: 'Services', ar: 'الخدمات' } },
       { href: '#projects', label: { en: 'Projects', ar: 'المشاريع' } },
+      { href: '#skills', label: { en: 'Skills', ar: 'المهارات' } },
+      { href: '#experience', label: { en: 'Experience', ar: 'الخبرة' } },
+      { href: '#cv', label: { en: 'CV', ar: 'السيرة الذاتية' } },
       { href: '#contact', label: { en: 'Contact', ar: 'التواصل' } },
     ],
     [],
@@ -61,7 +64,7 @@ export default function Navbar() {
             href='#'
             className='font-semibold tracking-tight text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-purple-400/70 rounded-md'
           >
-            <span className='bg-linear-to-r from-purple-300 via-pink-300 to-indigo-300 bg-clip-text text-transparent'>
+            <span className='bg-gradient-to-r from-purple-300 via-pink-300 to-indigo-300 bg-clip-text text-transparent'>
               Qasim Al-Smadi
             </span>
           </a>
@@ -82,7 +85,7 @@ export default function Navbar() {
             </ul>
             <a
               href='#contact'
-              className='ml-2 inline-flex items-center justify-center rounded-md px-3.5 py-2 text-sm font-medium text-slate-950 bg-linear-to-r from-purple-300 via-pink-300 to-indigo-300 hover:from-purple-200 hover:via-pink-200 hover:to-indigo-200 transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-purple-400/70'
+              className='ml-2 inline-flex items-center justify-center rounded-md px-3.5 py-2 text-sm font-medium text-slate-950 bg-gradient-to-r from-purple-300 via-pink-300 to-indigo-300 hover:from-purple-200 hover:via-pink-200 hover:to-indigo-200 transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-purple-400/70'
             >
               {lang === 'en' ? "Let's talk" : 'لنتحدث'}
             </a>
@@ -146,7 +149,7 @@ export default function Navbar() {
                   <button
                     type='button'
                     onClick={() => setMobileOpen(false)}
-                    className='block text-center rounded-md px-3.5 py-2.5 text-sm font-medium text-slate-950 bg-linear-to-r from-indigo-300 via-purple-300 to-pink-300 hover:from-indigo-200 hover:via-purple-200 hover:to-pink-200 transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-400/70'
+                    className='block text-center rounded-md px-3.5 py-2.5 text-sm font-medium text-slate-950 bg-gradient-to-r from-indigo-300 via-purple-300 to-pink-300 hover:from-indigo-200 hover:via-purple-200 hover:to-pink-200 transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-400/70'
                   >
                     {lang === 'en' ? "Let's talk" : 'لنتحدث'}
                   </button>

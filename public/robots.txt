@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://qasim-al-smadi.netlify.app/sitemap.xml

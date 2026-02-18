@@ -26,7 +26,7 @@ export default function SocialMediaBackground() {
       className='fixed inset-0 -z-20 overflow-hidden pointer-events-none'
     >
       {/* Base gradient */}
-      <div className='absolute inset-0 bg-linear-to-br from-slate-950 via-indigo-950/30 to-purple-950/40' />
+      <div className='absolute inset-0 bg-gradient-to-br from-slate-950 via-indigo-950/30 to-purple-950/40' />
 
       {/* Social media themed floating icons */}
       <div className='absolute inset-0'>
