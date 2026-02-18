@@ -3,6 +3,7 @@ import type { ReactNode } from 'react';
 import type { Metadata } from 'next';
 import ClientPageTransition from './ClientPageTransition';
 import { LangProvider } from './components/LangProvider';
+import { ThemeProvider } from './components/ThemeProvider';
 
 export const metadata: Metadata = {
   title: 'Qasim Al-Smadi | Backend Developer & AI Automation Specialist',
@@ -47,7 +48,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         />
         <meta
           name='theme-color'
-          content='#0f172a'
+          content='#3b82f6'
         />
         <link
           rel='preconnect'
@@ -59,10 +60,12 @@ export default function RootLayout({ children }: { children: ReactNode }) {
           crossOrigin='anonymous'
         />
       </head>
-      <body className='bg-slate-950 text-white'>
-        <LangProvider>
-          <ClientPageTransition>{children}</ClientPageTransition>
-        </LangProvider>
+      <body className='antialiased'>
+        <ThemeProvider>
+          <LangProvider>
+            <ClientPageTransition>{children}</ClientPageTransition>
+          </LangProvider>
+        </ThemeProvider>
       </body>
     </html>
   );

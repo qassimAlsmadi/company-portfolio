@@ -52,21 +52,23 @@ export default function Navbar() {
       initial={prefersReducedMotion ? false : { y: -24, opacity: 0 }}
       animate={prefersReducedMotion ? undefined : { y: 0, opacity: 1 }}
       transition={{ duration: 0.45, ease: 'easeOut' }}
-      className={`fixed top-0 w-full z-50 border-b transition-colors duration-300 ${
+      className={`fixed top-0 w-full z-50 transition-all duration-300 ${
         scrolled
-          ? 'border-white/10 bg-slate-950/60 backdrop-blur-xl'
-          : 'border-transparent bg-transparent'
+          ? 'bg-bg-primary/95 backdrop-blur-md border-b border-bg-border shadow-md'
+          : 'bg-bg-primary/80 backdrop-blur-sm border-b border-transparent'
       }`}
     >
       <div className='max-w-6xl mx-auto px-4 sm:px-6'>
         <div className='h-16 flex items-center justify-between'>
           <a
             href='#'
-            className='font-semibold tracking-tight text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-purple-400/70 rounded-md'
+            className='font-semibold tracking-tight text-text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-primary/50 rounded-md'
           >
-            <span className='bg-gradient-to-r from-purple-300 via-pink-300 to-indigo-300 bg-clip-text text-transparent'>
+            <div className={`font-bold tracking-tight ${
+              scrolled ? 'text-text-primary' : 'text-text-primary'
+            }`}>
               Qasim Al-Smadi
-            </span>
+            </div>
           </a>
 
           <div className='hidden md:flex items-center gap-2'>
@@ -76,7 +78,11 @@ export default function Navbar() {
                 <li key={item.href}>
                   <a
                     href={item.href}
-                    className='px-3 py-2 text-sm text-slate-200/90 hover:text-white hover:bg-white/5 rounded-md transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-purple-400/70'
+                    className={`px-3 py-2 text-sm transition-all duration-200 rounded-md ${
+                      scrolled 
+                        ? 'text-text-secondary hover:text-text-primary hover:bg-bg-secondary' 
+                        : 'text-text-secondary hover:text-text-primary hover:bg-bg-secondary'
+                    }`}
                   >
                     {item.label[lang]}
                   </a>
@@ -85,14 +91,18 @@ export default function Navbar() {
             </ul>
             <a
               href='#contact'
-              className='ml-2 inline-flex items-center justify-center rounded-md px-3.5 py-2 text-sm font-medium text-slate-950 bg-gradient-to-r from-purple-300 via-pink-300 to-indigo-300 hover:from-purple-200 hover:via-pink-200 hover:to-indigo-200 transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-purple-400/70'
+              className={`inline-flex items-center justify-center rounded-md px-3.5 py-2 text-sm font-medium transition-all duration-200 ${
+                scrolled 
+                  ? 'text-white bg-accent-primary hover:bg-accent-primary-hover hover:shadow-lg' 
+                  : 'text-white bg-accent-primary hover:bg-accent-primary-hover hover:shadow-lg'
+              } focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-primary/50`}
             >
               {lang === 'en' ? "Let's talk" : 'لنتحدث'}
             </a>
             <button
               type='button'
               onClick={() => setLang(lang === 'en' ? 'ar' : 'en')}
-              className='ml-2 inline-flex items-center justify-center rounded-md px-3 py-2 text-xs font-medium text-white border border-white/15 bg-white/5 hover:bg-white/10 transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-purple-400/70'
+              className='ml-2 inline-flex items-center justify-center rounded-md px-3 py-2 text-xs font-medium text-white border border-bg-border bg-bg-secondary hover:bg-bg-tertiary transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-primary/50'
             >
               {lang === 'en' ? 'العربية' : 'English'}
             </button>
@@ -102,7 +112,7 @@ export default function Navbar() {
             <ThemeToggle />
             <button
               type='button'
-              className='inline-flex items-center justify-center rounded-md p-2 text-slate-200 hover:text-white hover:bg-white/5 transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-purple-400/70'
+              className='inline-flex items-center justify-center rounded-md p-2 text-text-secondary hover:text-text-primary hover:bg-bg-secondary transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-primary/50'
               aria-label={mobileOpen ? 'Close menu' : 'Open menu'}
               aria-expanded={mobileOpen}
               aria-controls='mobile-nav'
@@ -130,7 +140,7 @@ export default function Navbar() {
             }
             exit={prefersReducedMotion ? undefined : { height: 0, opacity: 0 }}
             transition={{ duration: 0.25, ease: 'easeOut' }}
-            className='md:hidden border-t border-white/10 bg-slate-950/80 backdrop-blur-xl'
+            className='md:hidden border-t border-bg-border bg-bg-primary/95 backdrop-blur-xl'
           >
             <div className='max-w-6xl mx-auto px-4 sm:px-6 py-3'>
               <ul className='flex flex-col gap-1'>
@@ -139,7 +149,7 @@ export default function Navbar() {
                     <a
                       href={item.href}
                       onClick={() => setMobileOpen(false)}
-                      className='block px-3 py-2.5 rounded-md text-sm text-slate-200 hover:text-white hover:bg-white/5 transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-400/70'
+                      className='block px-3 py-2.5 rounded-md text-sm text-text-secondary hover:text-text-primary hover:bg-bg-secondary transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-primary/50'
                     >
                       {item.label[lang]}
                     </a>
@@ -149,7 +159,7 @@ export default function Navbar() {
                   <button
                     type='button'
                     onClick={() => setMobileOpen(false)}
-                    className='block text-center rounded-md px-3.5 py-2.5 text-sm font-medium text-slate-950 bg-gradient-to-r from-indigo-300 via-purple-300 to-pink-300 hover:from-indigo-200 hover:via-purple-200 hover:to-pink-200 transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-400/70'
+                    className='block text-center rounded-md px-3.5 py-2.5 text-sm font-medium text-white bg-accent-primary hover:bg-accent-primary-hover transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-primary/50'
                   >
                     {lang === 'en' ? "Let's talk" : 'لنتحدث'}
                   </button>
@@ -158,7 +168,7 @@ export default function Navbar() {
                   <button
                     type='button'
                     onClick={() => setLang(lang === 'en' ? 'ar' : 'en')}
-                    className='w-full text-center rounded-md px-3.5 py-2.5 text-sm font-medium text-white border border-white/15 bg-white/5 hover:bg-white/10 transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-400/70'
+                    className='w-full text-center rounded-md px-3.5 py-2.5 text-sm font-medium text-text-primary bg-bg-secondary border border-bg-border hover:bg-bg-tertiary transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-primary/50'
                   >
                     {lang === 'en' ? 'العربية' : 'English'}
                   </button>

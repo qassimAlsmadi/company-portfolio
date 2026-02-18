@@ -1,58 +1,84 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { Sun, Moon, Monitor } from 'lucide-react';
 import { motion } from 'framer-motion';
-import { FaSun, FaMoon } from 'react-icons/fa';
+import { useTheme } from './ThemeProvider';
 
 export default function ThemeToggle() {
-  const [isDark, setIsDark] = useState(() => {
-    if (typeof window !== 'undefined') {
-      const savedTheme = localStorage.getItem('theme');
-      return savedTheme !== 'light';
-    }
-    return true;
-  });
-
-  useEffect(() => {
-    if (isDark) {
-      document.documentElement.classList.add('dark');
-      document.documentElement.classList.remove('light');
-      localStorage.setItem('theme', 'dark');
-    } else {
-      document.documentElement.classList.add('light');
-      document.documentElement.classList.remove('dark');
-      localStorage.setItem('theme', 'light');
-    }
-  }, [isDark]);
+  const { theme, setTheme, resolvedTheme } = useTheme();
 
   const toggleTheme = () => {
-    setIsDark(!isDark);
+    const themes: Array<'light' | 'dark' | 'system'> = [
+      'light',
+      'dark',
+      'system',
+    ];
+    const currentIndex = themes.indexOf(theme);
+    const nextIndex = (currentIndex + 1) % themes.length;
+    setTheme(themes[nextIndex]);
+  };
+
+  const getIcon = () => {
+    if (theme === 'system') {
+      return <Monitor className='w-4 h-4' />;
+    }
+    return resolvedTheme === 'dark' ? (
+      <Moon className='w-4 h-4' />
+    ) : (
+      <Sun className='w-4 h-4' />
+    );
+  };
+
+  const getLabel = () => {
+    if (theme === 'system') return 'System';
+    return resolvedTheme === 'dark' ? 'Dark' : 'Light';
   };
 
   return (
     <motion.button
       onClick={toggleTheme}
-      whileHover={{ scale: 1.1 }}
-      whileTap={{ scale: 0.9 }}
-      className='relative w-10 h-10 rounded-full bg-slate-800 dark:bg-slate-700 border border-slate-600 dark:border-slate-600 flex items-center justify-center text-slate-300 dark:text-slate-300 hover:text-purple-400 dark:hover:text-purple-400 transition-colors duration-300'
-      aria-label='Toggle theme'
+      whileHover={{ scale: 1.05 }}
+      whileTap={{ scale: 0.95 }}
+      className='relative w-10 h-10 rounded-full bg-bg-secondary border border-bg-border flex items-center justify-center text-text-secondary hover:text-text-primary transition-all duration-300 group'
+      title={`Current theme: ${getLabel()}. Click to cycle through themes.`}
+      aria-label={`Toggle theme. Current: ${getLabel()}`}
     >
       <motion.div
         initial={false}
-        animate={{ rotate: isDark ? 0 : 180 }}
-        transition={{ duration: 0.3, ease: 'easeInOut' }}
+        animate={{
+          rotate: theme === 'system' ? 0 : resolvedTheme === 'dark' ? 0 : 180,
+        }}
+        transition={{ duration: 0.4, ease: 'easeInOut' }}
+        className='flex items-center justify-center'
       >
-        {isDark ? (
-          <FaMoon className='w-4 h-4' />
-        ) : (
-          <FaSun className='w-4 h-4' />
-        )}
+        {getIcon()}
       </motion.div>
 
-      {/* Glow effect */}
+      {/* Theme indicator dot */}
       <motion.div
-        className='absolute inset-0 rounded-full bg-purple-500 opacity-0'
-        whileHover={{ opacity: 0.2 }}
+        className={`absolute bottom-1 right-1 w-2 h-2 rounded-full ${
+          theme === 'system'
+            ? 'bg-accent-tertiary'
+            : resolvedTheme === 'dark'
+              ? 'bg-accent-secondary'
+              : 'bg-accent-primary'
+        }`}
+        animate={{ scale: [1, 1.2, 1] }}
+        transition={{ duration: 2, repeat: Infinity }}
+      />
+
+      {/* Glow effect on hover */}
+      <motion.div
+        className='absolute inset-0 rounded-full opacity-0'
+        style={{
+          background:
+            theme === 'system'
+              ? 'var(--accent-tertiary)'
+              : resolvedTheme === 'dark'
+                ? 'var(--accent-secondary)'
+                : 'var(--accent-primary)',
+        }}
+        whileHover={{ opacity: 0.1 }}
         transition={{ duration: 0.2 }}
       />
     </motion.button>
